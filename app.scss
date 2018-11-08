@@ -1,16 +1,16 @@
 @import "@material/line-ripple/mdc-line-ripple";
-@import "@material/theme/mdc-theme";
+@import "@material/theme/color-palette";
 
 body {
   font-family: 'Poppins', sans-serif;
   font-size: 2.1em;
-  color: $material-color-grey-700;
-  background: #fcfbfc;
+  background: $material-color-pink-600;
+  color: $material-color-red-100;
   font-weight: bold;
 }
 
 h2 {
-  color: $material-color-indigo-700;
+  color: $material-color-indigo-50;
 }
 
 .content {
@@ -20,7 +20,7 @@ h2 {
 
 a {
   display: inline-block;
-  color: $material-color-pink-500;
+  color: $material-color-indigo-50;
   text-decoration: none;
   font-weight: bold;
 }
@@ -29,6 +29,28 @@ a:hover {
   transform: scale(1.01);
   transition: transform 200ms;
   text-decoration: underline;
+}
+
+.triangle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-top: 500px solid $material-color-indigo-700;
+  border-right: 900px solid transparent;
+  z-index: -1;
+}
+
+
+.square {
+  position: absolute;
+  bottom: -10px;
+  right: 0;
+  width: 600px;
+  height: 400px;
+  background: $material-color-indigo-700;
+  z-index: -1;
 }
 
 .line-ripple-container {

@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "@material/line-ripple": "^0.41.0",
+    "@material/theme": "^0.41.0",
     "autoprefixer": "^9.3.1",
     "css-loader": "^1.0.1",
     "extract-loader": "^3.0.0",
