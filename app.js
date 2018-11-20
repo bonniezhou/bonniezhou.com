@@ -10,7 +10,7 @@ class Link {
   }
 }
 
-const linkElements = document.querySelectorAll('.link');
+const linkElements = document.querySelectorAll('.underlined-link');
 linkElements.forEach((linkEl) => {
   new Link(linkEl);
 });

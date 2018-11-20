@@ -2,31 +2,27 @@
 @import "@material/theme/color-palette";
 @import "@material/typography/mdc-typography";
 
-html {
-  height: 100%;
+// Functional CSS
+
+.baseline-adjust {
+  $line-height: 2.5em;
+  @include mdc-typography-baseline-top($line-height);
+  @include mdc-typography-baseline-bottom($line-height);
 }
+
+// Element CSS
+
+html { height: 100% }
 
 body {
   height: 97%;
   font-family: 'Poppins', sans-serif;
-  font-size: 2.1em;
-  font-weight: bold;
+  font-size: 1.5em;
   color: $material-color-grey-700;
   background: #fcfbfc;
-
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-h2 {
-  color: $material-color-indigo-600;
-}
-
-.content {
-  max-height: 80%;
-  max-width: 80%; //TODO: 90% for mobile breakpoint
-  padding-bottom: 80px;
 }
 
 a {
@@ -35,7 +31,20 @@ a {
   text-decoration: none;
 }
 
-.content-page {
+.underlined-link {
+  display: inline-block;
+  position: relative;
+
+  .mdc-line-ripple {
+    @include mdc-line-ripple-color($material-color-pink-500);
+  }
+}
+
+.content {
+  max-height: 90%;
+  max-width: 80%; //TODO: 90% for mobile breakpoint
+  padding-bottom: 3em;
+
   p {
     font-weight: normal;
   }
@@ -44,22 +53,12 @@ a {
   }
 }
 
-.link {
-  display: inline-block;
-  position: relative;
+.landing-content {
+  font-weight: bold;
+  font-size: 1.4em; // TODO: adjust for mobile
 }
 
-.mdc-line-ripple {
-  @include mdc-line-ripple-color($material-color-pink-500);
-}
-
-.paragraph {
-  $line-height: 80px;
-
-  @include mdc-typography-baseline-top($line-height);
-  @include mdc-typography-baseline-bottom($line-height);
-}
-
-.paragraph.body-text {
-  font-size: 0.7em;
+h1 {
+  font-size: 1.5em;
+  color: $material-color-indigo-600;
 }
