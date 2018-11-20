@@ -25,7 +25,7 @@ h2 {
 
 .content {
   max-height: 80%;
-  max-width: 1100px;
+  max-width: 80%; //TODO: 90% for mobile breakpoint
   padding-bottom: 80px;
 }
 
@@ -33,6 +33,15 @@ a {
   display: inline-block;
   color: $material-color-pink-500;
   text-decoration: none;
+}
+
+.content-page {
+  p {
+    font-weight: normal;
+  }
+  a:hover {
+    font-weight: bold;
+  }
 }
 
 .link {
@@ -49,4 +58,8 @@ a {
 
   @include mdc-typography-baseline-top($line-height);
   @include mdc-typography-baseline-bottom($line-height);
+}
+
+.paragraph.body-text {
+  font-size: 0.7em;
 }
