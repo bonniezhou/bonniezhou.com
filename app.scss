@@ -24,9 +24,15 @@ body {
   font-size: 1.5rem;
   color: $material-color-grey-700;
   background: var(--bg-white);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+}
+
+.content {
+  padding: 2% 10%;
+  max-width: 80vw;
+
+  p {
+    font-weight: normal;
+  }
 }
 
 a {
@@ -39,6 +45,24 @@ a {
     background: $material-color-pink-500;
     color: var(--bg-white);
   }
+
+  &:hover {
+    font-weight: bold;
+  }
+}
+
+h1 {
+  font-size: 2.7rem;
+  color: $material-color-indigo-600;
+}
+
+// Landing page
+
+.landing-page {
+  font-weight: bold;
+  font-size: 1.9rem;
+  display: flex;
+  justify-content: space-around;
 }
 
 .underlined-link {
@@ -50,30 +74,66 @@ a {
   }
 }
 
-.content {
-  max-height: 90vh;
-  max-width: 80vw;
-  padding-bottom: 3em; //relative to parent font size
-
-  p {
-    font-weight: normal;
-  }
-  a:hover {
-    font-weight: bold;
-  }
+.sidebar {
+  box-sizing: border-box;
+  padding: 7rem 0;
+  width: 5%;
+  height: 100%;
+  font-size: 1.3rem;
 }
 
-.landing-content {
-  font-weight: bold;
-  font-size: 2.1rem;
-}
+.sidebar .underlined-link {
+  margin-top: 100px;
 
-h1 {
-  font-size: 3rem;
-  color: $material-color-indigo-600;
+  // Works because Twitter and LinkedIn are the same length
+  transform-origin: top left;
+  transform: translateX(10%) translateY(-100px) rotate(90deg);
+
+  &.instagram {
+    transform: translateX(7%) translateY(-100px) rotate(90deg);
+  }
+
+  a {
+    text-transform: uppercase;
+  }
 }
 
 @media (max-width: 600px) {
-  .content { max-width: 90vw }
-  .landing-content { font-size: 1.8rem }
+  body {
+    font-size: 1.3rem;
+  }
+
+  .content {
+    padding: 0 5%;
+    max-width: 90vw;
+  }
+
+  // Landing page mobile
+
+  .landing-page {
+    display: block;
+    font-size: 1.6rem;
+  }
+
+  h1 {
+    font-size: 2.3rem;
+  }
+
+  .sidebar {
+    padding: 4rem 0;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  
+  // Undo rotation
+  .sidebar .underlined-link {
+    margin: 0;
+    transform: none;
+
+    &.instagram {
+      transform: none;
+    }
+  }
 }
