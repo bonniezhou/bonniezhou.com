@@ -2,10 +2,14 @@
 @import "@material/theme/color-palette";
 @import "@material/typography/mdc-typography";
 
+:root {
+  --bg-white: #fcfbfc;
+}
+
 // Functional CSS
 
 .baseline-adjust {
-  $line-height: 2.5em;
+  $line-height: 2.5em; // relative to parent font size
   @include mdc-typography-baseline-top($line-height);
   @include mdc-typography-baseline-bottom($line-height);
 }
@@ -17,9 +21,9 @@ html { height: 100% }
 body {
   height: 97%;
   font-family: 'Poppins', sans-serif;
-  font-size: 1.5em;
+  font-size: 1.5rem;
   color: $material-color-grey-700;
-  background: #fcfbfc;
+  background: var(--bg-white);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -29,6 +33,12 @@ a {
   display: inline-block;
   color: $material-color-pink-500;
   text-decoration: none;
+
+  &.focus-visible {
+    outline: none;
+    background: $material-color-pink-500;
+    color: var(--bg-white);
+  }
 }
 
 .underlined-link {
@@ -41,9 +51,9 @@ a {
 }
 
 .content {
-  max-height: 90%;
-  max-width: 80%; //TODO: 90% for mobile breakpoint
-  padding-bottom: 3em;
+  max-height: 90vh;
+  max-width: 80vw;
+  padding-bottom: 3em; //relative to parent font size
 
   p {
     font-weight: normal;
@@ -55,10 +65,15 @@ a {
 
 .landing-content {
   font-weight: bold;
-  font-size: 1.4em; // TODO: adjust for mobile
+  font-size: 2.1rem;
 }
 
 h1 {
-  font-size: 1.5em;
+  font-size: 3rem;
   color: $material-color-indigo-600;
+}
+
+@media (max-width: 600px) {
+  .content { max-width: 90vw }
+  .landing-content { font-size: 1.8rem }
 }
