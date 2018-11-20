@@ -27,7 +27,7 @@ body {
 }
 
 .content {
-  padding: 2% 10%;
+  padding: 2% 10% 5%;
   max-width: 80vw;
 
   p {
@@ -54,6 +54,30 @@ a {
 h1 {
   font-size: 2.7rem;
   color: $material-color-indigo-600;
+}
+
+.back-arrow {
+  color: $material-color-pink-500;
+  height: 0;
+
+  a {
+    margin: 1vw;
+
+    // Undo link hover styling
+    &.focus-visible {
+      background: none;
+      color: $material-color-pink-500;
+    }
+
+    &.focus-visible .material-icons,
+    &:hover .material-icons{
+      font-weight: bold;
+    }
+  }
+
+  .material-icons {
+    font-size: 3rem;
+  }
 }
 
 // Landing page
@@ -106,6 +130,15 @@ h1 {
   .content {
     padding: 0 5%;
     max-width: 90vw;
+  }
+
+  .back-arrow {
+    height: 0.5rem; // creates top margin for content
+  
+    .material-icons {
+      padding: 0.5vw;
+      font-size: 2.5rem;
+    }
   }
 
   // Landing page mobile
