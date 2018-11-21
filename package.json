@@ -23,7 +23,8 @@
     "babel-preset-es2015": "^6.24.1"
   },
   "scripts": {
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
