@@ -1,2 +1,2 @@
-# [bonniezhou.com](bonniezhou.com)
+# [bonniezhou.com](https://bonniezhou.com/)
 Bonnie Zhou's personal website
