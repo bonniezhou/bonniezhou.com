@@ -280,7 +280,7 @@ h1 {
   h1 {
     font-size: 2.3rem; }
   .sidebar {
-    padding: 4rem 5%;
+    padding: 3rem 5%;
     width: 100%;
     height: auto; }
   .sidebar .underlined-link {
@@ -290,7 +290,7 @@ h1 {
     .sidebar .underlined-link.instagram {
       -webkit-transform: none;
               transform: none; }
-    .sidebar .underlined-link .name,
+    .sidebar .underlined-link .social-name,
     .sidebar .underlined-link .mdc-line-ripple {
       display: none; }
     .sidebar .underlined-link svg {
