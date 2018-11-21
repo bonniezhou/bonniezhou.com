@@ -16,10 +16,7 @@
 
 // Element CSS
 
-html { height: 100% }
-
 body {
-  height: 97%;
   font-family: 'Poppins', sans-serif;
   font-size: 1.5rem;
   color: $material-color-grey-700;
@@ -27,12 +24,9 @@ body {
 }
 
 .content {
+  box-sizing: border-box;
   padding: 2% 10% 5%;
   max-width: 80vw;
-
-  p {
-    font-weight: normal;
-  }
 }
 
 a {
@@ -107,6 +101,7 @@ h1 {
 }
 
 .sidebar .underlined-link {
+  text-transform: uppercase;
   margin-top: 100px;
 
   // Works because Twitter and LinkedIn are the same length
@@ -116,13 +111,9 @@ h1 {
   &.instagram {
     transform: translateX(7%) translateY(-100px) rotate(90deg);
   }
-
-  a {
-    text-transform: uppercase;
-  }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 37.5em) {
   body {
     font-size: 1.3rem;
   }
@@ -153,16 +144,14 @@ h1 {
   }
 
   .sidebar {
-    padding: 4rem 0;
+    padding: 4rem 5%;
     width: 100%;
     height: auto;
-    display: flex;
-    justify-content: space-evenly;
   }
   
   // Undo rotation
   .sidebar .underlined-link {
-    margin: 0;
+    margin: 0 4vw 0 0;
     transform: none;
 
     &.instagram {
