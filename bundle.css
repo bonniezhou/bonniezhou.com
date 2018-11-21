@@ -260,7 +260,7 @@ h1 {
     -webkit-transform: translateX(7%) translateY(-100px) rotate(90deg);
             transform: translateX(7%) translateY(-100px) rotate(90deg); }
 
-@media (max-width: 37.5em) {
+@media (max-width: 600px) {
   body {
     font-size: 1.3rem; }
   .content {
