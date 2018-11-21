@@ -111,6 +111,12 @@ h1 {
   &.instagram {
     transform: translateX(7%) translateY(-100px) rotate(90deg);
   }
+
+  // Hide icons
+  svg {
+    fill: $material-color-pink-500;
+    display: none;
+  }
 }
 
 @media (max-width: 600px) {
@@ -156,6 +162,26 @@ h1 {
 
     &.instagram {
       transform: none;
+    }
+
+    // Switch to icon
+    .name,
+    .mdc-line-ripple {
+      display: none;
+    }
+
+    svg {
+      display: block;
+    }
+
+    &:hover svg {
+      fill: $material-color-indigo-600;
+    }
+    
+    &.focus-visible svg {
+      fill: $material-color-indigo-600;
+      outline: none;
+      background: var(--bg-white);
     }
   }
 }

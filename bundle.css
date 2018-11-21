@@ -259,6 +259,9 @@ h1 {
   .sidebar .underlined-link.instagram {
     -webkit-transform: translateX(7%) translateY(-100px) rotate(90deg);
             transform: translateX(7%) translateY(-100px) rotate(90deg); }
+  .sidebar .underlined-link svg {
+    fill: #e91e63;
+    display: none; }
 
 @media (max-width: 600px) {
   body {
@@ -286,4 +289,15 @@ h1 {
             transform: none; }
     .sidebar .underlined-link.instagram {
       -webkit-transform: none;
-              transform: none; } }
+              transform: none; }
+    .sidebar .underlined-link .name,
+    .sidebar .underlined-link .mdc-line-ripple {
+      display: none; }
+    .sidebar .underlined-link svg {
+      display: block; }
+    .sidebar .underlined-link:hover svg {
+      fill: #3949ab; }
+    .sidebar .underlined-link.focus-visible svg {
+      fill: #3949ab;
+      outline: none;
+      background: var(--bg-white); } }
