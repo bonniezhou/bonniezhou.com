@@ -2,6 +2,8 @@
 @import "@material/theme/color-palette";
 @import "@material/typography/mdc-typography";
 
+@import "./modeling/modeling";
+
 :root {
   --bg-white: #fcfbfc;
 }
