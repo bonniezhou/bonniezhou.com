@@ -5,6 +5,7 @@
 #model-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-auto-rows: 500px;
   grid-gap: 1rem;
   list-style: none;
   margin: 10vh 0 0 -5px;
@@ -20,6 +21,10 @@
     object-fit: cover;
     object-position: center;
   }
+}
+
+#sexy-window img {
+  object-position: center 80%;
 }
 
 #laughing-lights img {
