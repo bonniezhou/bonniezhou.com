@@ -1,11 +1,26 @@
 @import "@s9a/tape";
-
-a {
-  text-decoration: none;
-}
+@import "articles";
 
 body {
   font-family: monospace;
+
+  a {
+    text-decoration: none;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:hover, &:focus {
+      background: var(--tape-black) !important;
+      color: var(--tape-hex) !important;
+    }
+  }
+
+  ::selection {
+    background: var(--tape-black) !important;
+    color: var(--tape-white) !important;
+  }
 }
 
 .landing-page {
@@ -15,11 +30,6 @@ body {
   grid-column-gap: 3vw;
   grid-row-gap: 5vh;
   margin: 50px;
-
-  ::selection {
-    background: var(--tape-white) !important;
-    color: var(--tape-black) !important;
-  }
 }
 
 .landing-title {
@@ -33,51 +43,49 @@ body {
   }
 }
 
-.landing-section {
+.landing-tab {
   display: flex;
   align-items: center;
   grid-column: span 3;
   padding: 40px;
   font-size: 1.25rem;
-
-  &:hover {
-    background: var(--tape-black) !important;
-    color: var(--tape-hex) !important;
-  }
 }
 
 .landing-about {
-  border: 1vw solid var(--tape-black);
   grid-column: span 7;
   font-size: 1.5rem;
   padding: 20px;
+  border: 15px solid var(--tape-black);
+
   p {
     margin: 0;
     line-height: 2rem;
   }
-  a:hover {
+
+  a:hover, a:focus {
     background: var(--tape-white) !important;
     color: var(--tape-black) !important;
   }
 }
 
 .landing-contact {
-  border: 1vw solid var(--tape-blue);
   grid-column: span 2;
   font-size: 1.5rem;
   padding: 20px;
+  border: 15px solid var(--tape-blue);
 
   a {
     line-height: 2.5rem;
 
-    &:hover {
+    &:hover, &:focus {
       background: var(--tape-yellow) !important;
+      color: var(--tape-black) !important;
     }
   }
 
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1150px) {
   .landing-about, .landing-contact {
     grid-column: span 9;
   }
@@ -87,11 +95,18 @@ body {
   }
 }
 
-@media (max-width: 780px) {
+@media (max-width: 850px) {
   .landing-page {
     grid-template-rows: auto repeat(3, 1fr) auto auto;
   }
-  .landing-section, .landing-about, .landing-contact {
+
+  .landing-tab, .landing-about, .landing-contact {
     grid-column: span 9;
+  }
+}
+
+@media (max-width: 720px) {
+  .landing-contact div {
+    display: block;
   }
 }

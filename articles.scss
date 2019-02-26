@@ -1,0 +1,21 @@
+.article-page {
+  margin: 50px;
+  font-size: 1.25rem;
+}
+
+.back-arrow {
+  height: 0;
+  margin: 20px 10px;
+
+  .material-icons {
+    font-size: 2rem;
+  }
+
+  a:hover, a:focus {
+    background: transparent !important;
+
+    .material-icons {
+      background: var(--tape-black) !important;
+    }
+  }
+}
