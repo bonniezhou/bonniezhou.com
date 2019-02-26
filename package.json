@@ -6,6 +6,7 @@
   "dependencies": {
     "@material/line-ripple": "^0.41.0",
     "@material/typography": "^0.41.0",
+    "@s9a/tape": "^0.2.0",
     "autoprefixer": "^9.3.1",
     "css-loader": "^1.0.1",
     "extract-loader": "^3.0.0",

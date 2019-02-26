@@ -1,203 +1,97 @@
-@import "@material/line-ripple/mdc-line-ripple";
-@import "@material/theme/color-palette";
-@import "@material/typography/mdc-typography";
-
-@import "./modeling/modeling";
-
-:root {
-  --bg-white: #fcfbfc;
-}
-
-// Functional CSS
-
-.baseline-adjust {
-  $line-height: 2.5em; // relative to parent font size
-  @include mdc-typography-baseline-top($line-height);
-  @include mdc-typography-baseline-bottom($line-height);
-}
-
-// Element CSS
-
-body {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.5rem;
-  color: $material-color-grey-700;
-  background: var(--bg-white);
-}
-
-.content {
-  box-sizing: border-box;
-  padding: 2% 10% 5%;
-  max-width: 80vw;
-}
+@import "@s9a/tape";
 
 a {
-  display: inline-block;
-  color: $material-color-pink-500;
   text-decoration: none;
-
-  &.focus-visible {
-    outline: none;
-    background: $material-color-pink-500;
-    color: var(--bg-white);
-  }
-
-  &:hover {
-    font-weight: bold;
-  }
 }
 
-h1 {
-  font-size: 2.7rem;
-  color: $material-color-indigo-600;
+body {
+  font-family: monospace;
 }
-
-.back-arrow {
-  color: $material-color-pink-500;
-  height: 0;
-
-  a {
-    margin: 1vw;
-
-    // Undo link hover styling
-    &.focus-visible {
-      background: none;
-      color: $material-color-pink-500;
-    }
-
-    &.focus-visible .material-icons,
-    &:hover .material-icons{
-      font-weight: bold;
-    }
-  }
-
-  .material-icons {
-    font-size: 3rem;
-  }
-}
-
-// Landing page
 
 .landing-page {
-  font-weight: bold;
-  font-size: 1.9rem;
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: auto 2fr 3fr;
+  grid-column-gap: 3vw;
+  grid-row-gap: 5vh;
+  margin: 50px;
+
+  ::selection {
+    background: var(--tape-white) !important;
+    color: var(--tape-black) !important;
+  }
+}
+
+.landing-title {
+  margin: auto 0;
+  grid-column: span 9;
+  font-size: 3rem;
+
+  ::selection {
+    background: var(--tape-black) !important;
+    color: var(--tape-pink) !important;
+  }
+}
+
+.landing-section {
   display: flex;
-  justify-content: space-around;
-}
+  align-items: center;
+  grid-column: span 3;
+  padding: 40px;
+  font-size: 1.25rem;
 
-.underlined-link {
-  display: inline-block;
-  position: relative;
-
-  .mdc-line-ripple {
-    @include mdc-line-ripple-color($material-color-pink-500);
+  &:hover {
+    background: var(--tape-black) !important;
+    color: var(--tape-hex) !important;
   }
 }
 
-.sidebar {
-  box-sizing: border-box;
-  padding: 7rem 0;
-  width: 5%;
-  height: 100%;
-  font-size: 1.3rem;
-}
-
-.sidebar .underlined-link {
-  text-transform: uppercase;
-  margin-top: 100px;
-
-  // Works because Twitter and LinkedIn are the same length
-  transform-origin: top left;
-  transform: translateX(10%) translateY(-100px) rotate(90deg);
-
-  &.instagram {
-    transform: translateX(7%) translateY(-100px) rotate(90deg);
+.landing-about {
+  border: 1vw solid var(--tape-black);
+  grid-column: span 7;
+  font-size: 1.5rem;
+  padding: 20px;
+  p {
+    margin: 0;
+    line-height: 2rem;
   }
-
-  // Hide icons
-  svg {
-    fill: $material-color-pink-500;
-    display: none;
+  a:hover {
+    background: var(--tape-white) !important;
+    color: var(--tape-black) !important;
   }
 }
 
-@media (max-width: 700px) {
-  body {
-    font-size: 1.3rem;
-  }
+.landing-contact {
+  border: 1vw solid var(--tape-blue);
+  grid-column: span 2;
+  font-size: 1.5rem;
+  padding: 20px;
 
-  .content {
-    padding: 0 5%;
-    max-width: 90vw;
-  }
+  a {
+    line-height: 2.5rem;
 
-  .back-arrow {
-    height: 0.5rem; // creates top margin for content
-  
-    .material-icons {
-      padding: 0.5vw;
-      font-size: 2.5rem;
+    &:hover {
+      background: var(--tape-yellow) !important;
     }
   }
 
-  // Landing page mobile
+}
 
+@media (max-width: 1100px) {
+  .landing-about, .landing-contact {
+    grid-column: span 9;
+  }
+
+  .landing-contact div {
+    display: inline;
+  }
+}
+
+@media (max-width: 780px) {
   .landing-page {
-    display: block;
-    font-size: 1.6rem;
+    grid-template-rows: auto repeat(3, 1fr) auto auto;
   }
-
-  h1 {
-    font-size: 2.3rem;
-  }
-
-  .sidebar {
-    padding: 3rem 5%;
-    width: 100%;
-    height: auto;
-  }
-  
-  // Undo rotation
-  .sidebar .underlined-link {
-    margin: 0 4vw 0 0;
-    transform: none;
-
-    &.instagram {
-      transform: none;
-    }
-
-    // Switch to icon
-    .social-name,
-    .mdc-line-ripple {
-      display: none;
-    }
-
-    svg {
-      display: block;
-    }
-
-    &:hover svg {
-      fill: $material-color-indigo-600;
-    }
-    
-    &.focus-visible svg {
-      fill: $material-color-indigo-600;
-      outline: none;
-      background: var(--bg-white);
-    }
-  }
-}
-
-@media (max-width: 400px) {
-  body {
-    font-size: 1.1rem;
-  }
-
-  .landing-page {
-    font-size: 1.3rem;
-  }
-
-  h1 {
-    font-size: 2rem;
+  .landing-section, .landing-about, .landing-contact {
+    grid-column: span 9;
   }
 }
