@@ -27,10 +27,10 @@ body {
 .landing-page {
   display: grid;
   grid-template-columns: repeat(9, 1fr);
-  grid-template-rows: auto 2fr 3fr;
+  grid-template-rows: auto 2fr auto;
   grid-column-gap: 3vw;
   grid-row-gap: 5vh;
-  margin: 50px;
+  margin: 10vh 10vw;
 }
 
 .landing-title {
@@ -50,6 +50,10 @@ body {
   grid-column: span 3;
   padding: 40px;
   font-size: 1.25rem;
+
+  h2 {
+    padding-right: 16px;
+  }
 }
 
 .landing-about {
@@ -70,16 +74,20 @@ body {
 }
 
 .landing-contact {
-  grid-column: span 2;
+  grid-column: span 9;
   font-size: 1.5rem;
   padding: 20px;
-  border: 15px solid var(--tape-blue);
+  border: 15px solid var(--tape-pink);
+
+  div {
+    display: inline;
+  }
 
   a {
     line-height: 2.5rem;
 
     &:hover, &:focus {
-      background: var(--tape-yellow) !important;
+      background: var(--tape-blue) !important;
       color: var(--tape-black) !important;
     }
   }
@@ -106,7 +114,7 @@ body {
   }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 800px) {
   .landing-contact div {
     display: block;
   }
