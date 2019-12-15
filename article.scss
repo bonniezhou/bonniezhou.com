@@ -1,6 +1,11 @@
 .article-page {
   margin: 50px;
   font-size: 1.25rem;
+
+  a:hover, a:focus {
+    background: var(--tape-black) !important; //!important is necessary for @s9a/tape library
+    color: var(--tape-hex) !important; //!important is necessary for @s9a/tape library
+  }
 }
 
 .back-arrow {
@@ -12,10 +17,11 @@
   }
 
   a:hover, a:focus {
-    background: transparent !important;
+    background: transparent !important; //!important is necessary for @s9a/tape library
 
     .material-icons {
-      background: var(--tape-black) !important;
+      background: var(--tape-black) !important; //!important is necessary for @s9a/tape library
+      color: var(--tape-white) !important; //!important is necessary for @s9a/tape library
     }
   }
 }

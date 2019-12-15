@@ -12,8 +12,8 @@ body {
     }
 
     &:hover, &:focus {
-      background: var(--tape-white) !important;
-      color: var(--tape-black) !important;
+      background: var(--tape-white) !important; //!important is necessary for @s9a/tape library
+      color: var(--tape-black) !important; //!important is necessary for @s9a/tape library
     }
   }
 }
@@ -28,11 +28,6 @@ body {
 .landing-title {
   margin: 0;
   font-size: 3rem;
-
-  ::selection {
-    background: var(--tape-black) !important;
-    color: var(--tape-pink) !important;
-  }
 }
 
 .landing-section {
