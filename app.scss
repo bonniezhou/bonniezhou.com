@@ -1,6 +1,5 @@
 @import "@s9a/tape";
 @import "article";
-@import "section";
 
 body {
   font-family: monospace;
@@ -13,29 +12,21 @@ body {
     }
 
     &:hover, &:focus {
-      background: var(--tape-black) !important;
-      color: var(--tape-hex) !important;
+      background: var(--tape-white) !important;
+      color: var(--tape-black) !important;
     }
-  }
-
-  ::selection {
-    background: var(--tape-black) !important;
-    color: var(--tape-white) !important;
   }
 }
 
 .landing-page {
-  display: grid;
-  grid-template-columns: repeat(9, 1fr);
-  grid-template-rows: auto 2fr auto;
-  grid-column-gap: 3vw;
-  grid-row-gap: 5vh;
-  margin: 10vh 10vw;
+  display: flex;
+  flex-direction: column;
+  margin: 40px auto;
+  max-width: 800px;
 }
 
 .landing-title {
-  margin: auto 0;
-  grid-column: span 9;
+  margin: 0;
   font-size: 3rem;
 
   ::selection {
@@ -44,78 +35,35 @@ body {
   }
 }
 
-.landing-tab {
+.landing-section {
   display: flex;
-  align-items: center;
-  grid-column: span 3;
+  box-sizing: content-box;
+  margin-block-start: 20px;
   padding: 40px;
   font-size: 1.25rem;
 
-  h2 {
-    padding-right: 16px;
-  }
-}
-
-.landing-about {
-  grid-column: span 7;
-  font-size: 1.5rem;
-  padding: 20px;
-  border: 15px solid var(--tape-black);
-
-  p {
-    margin: 0;
-    line-height: 2rem;
+  .landing-section-heading {
+    align-self: center;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    margin-block-start: 0;
   }
 
-  a:hover, a:focus {
-    background: var(--tape-white) !important;
-    color: var(--tape-black) !important;
-  }
-}
+  .landing-section-body {
+    p {
+      margin-block-start: 0;
+    }
 
-.landing-contact {
-  grid-column: span 9;
-  font-size: 1.5rem;
-  padding: 20px;
-  border: 15px solid var(--tape-pink);
-
-  div {
-    display: inline;
-  }
-
-  a {
-    line-height: 2.5rem;
-
-    &:hover, &:focus {
-      background: var(--tape-blue) !important;
-      color: var(--tape-black) !important;
+    a {
+      display: inline-block;
+      margin-block-end: 8px;
     }
   }
-
 }
 
-@media (max-width: 1150px) {
-  .landing-about, .landing-contact {
-    grid-column: span 9;
-  }
-
-  .landing-contact div {
-    display: inline;
-  }
-}
-
-@media (max-width: 850px) {
+// Set min margin to 40px (screen size: 40px + 800px + 40px)
+@media (max-width: 880px) {
   .landing-page {
-    grid-template-rows: auto repeat(3, 1fr) auto auto;
-  }
-
-  .landing-tab, .landing-about, .landing-contact {
-    grid-column: span 9;
-  }
-}
-
-@media (max-width: 800px) {
-  .landing-contact div {
-    display: block;
+    margin: 40px;
   }
 }
