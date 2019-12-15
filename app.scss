@@ -1,203 +1,64 @@
-@import "@material/line-ripple/mdc-line-ripple";
-@import "@material/theme/color-palette";
-@import "@material/typography/mdc-typography";
-
-@import "./modeling/modeling";
-
-:root {
-  --bg-white: #fcfbfc;
-}
-
-// Functional CSS
-
-.baseline-adjust {
-  $line-height: 2.5em; // relative to parent font size
-  @include mdc-typography-baseline-top($line-height);
-  @include mdc-typography-baseline-bottom($line-height);
-}
-
-// Element CSS
+@import "@s9a/tape";
+@import "article";
 
 body {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.5rem;
-  color: $material-color-grey-700;
-  background: var(--bg-white);
-}
-
-.content {
-  box-sizing: border-box;
-  padding: 2% 10% 5%;
-  max-width: 80vw;
-}
-
-a {
-  display: inline-block;
-  color: $material-color-pink-500;
-  text-decoration: none;
-
-  &.focus-visible {
-    outline: none;
-    background: $material-color-pink-500;
-    color: var(--bg-white);
-  }
-
-  &:hover {
-    font-weight: bold;
-  }
-}
-
-h1 {
-  font-size: 2.7rem;
-  color: $material-color-indigo-600;
-}
-
-.back-arrow {
-  color: $material-color-pink-500;
-  height: 0;
+  font-family: monospace;
 
   a {
-    margin: 1vw;
+    text-decoration: none;
 
-    // Undo link hover styling
-    &.focus-visible {
-      background: none;
-      color: $material-color-pink-500;
+    &:focus {
+      outline: none;
     }
 
-    &.focus-visible .material-icons,
-    &:hover .material-icons{
-      font-weight: bold;
+    &:hover, &:focus {
+      background: var(--tape-white) !important; //!important is necessary for @s9a/tape library
+      color: var(--tape-black) !important; //!important is necessary for @s9a/tape library
     }
-  }
-
-  .material-icons {
-    font-size: 3rem;
   }
 }
-
-// Landing page
 
 .landing-page {
-  font-weight: bold;
-  font-size: 1.9rem;
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  margin: 40px auto;
+  max-width: 800px;
 }
 
-.underlined-link {
-  display: inline-block;
-  position: relative;
-
-  .mdc-line-ripple {
-    @include mdc-line-ripple-color($material-color-pink-500);
-  }
+.landing-title {
+  margin: 0;
+  font-size: 3rem;
 }
 
-.sidebar {
-  box-sizing: border-box;
-  padding: 7rem 0;
-  width: 5%;
-  height: 100%;
-  font-size: 1.3rem;
-}
+.landing-section {
+  display: flex;
+  box-sizing: content-box;
+  margin-block-start: 20px;
+  padding: 40px;
+  font-size: 1.25rem;
 
-.sidebar .underlined-link {
-  text-transform: uppercase;
-  margin-top: 100px;
-
-  // Works because Twitter and LinkedIn are the same length
-  transform-origin: top left;
-  transform: translateX(10%) translateY(-100px) rotate(90deg);
-
-  &.instagram {
-    transform: translateX(7%) translateY(-100px) rotate(90deg);
+  .landing-section-heading {
+    align-self: center;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    margin-block-start: 0;
   }
 
-  // Hide icons
-  svg {
-    fill: $material-color-pink-500;
-    display: none;
-  }
-}
+  .landing-section-body {
+    p {
+      margin-block-start: 0;
+    }
 
-@media (max-width: 700px) {
-  body {
-    font-size: 1.3rem;
-  }
-
-  .content {
-    padding: 0 5%;
-    max-width: 90vw;
-  }
-
-  .back-arrow {
-    height: 0.5rem; // creates top margin for content
-  
-    .material-icons {
-      padding: 0.5vw;
-      font-size: 2.5rem;
+    a {
+      display: inline-block;
+      margin-block-end: 8px;
     }
   }
+}
 
-  // Landing page mobile
-
+// Set min margin to 40px (screen size: 40px + 800px + 40px)
+@media (max-width: 880px) {
   .landing-page {
-    display: block;
-    font-size: 1.6rem;
-  }
-
-  h1 {
-    font-size: 2.3rem;
-  }
-
-  .sidebar {
-    padding: 3rem 5%;
-    width: 100%;
-    height: auto;
-  }
-  
-  // Undo rotation
-  .sidebar .underlined-link {
-    margin: 0 4vw 0 0;
-    transform: none;
-
-    &.instagram {
-      transform: none;
-    }
-
-    // Switch to icon
-    .social-name,
-    .mdc-line-ripple {
-      display: none;
-    }
-
-    svg {
-      display: block;
-    }
-
-    &:hover svg {
-      fill: $material-color-indigo-600;
-    }
-    
-    &.focus-visible svg {
-      fill: $material-color-indigo-600;
-      outline: none;
-      background: var(--bg-white);
-    }
-  }
-}
-
-@media (max-width: 400px) {
-  body {
-    font-size: 1.1rem;
-  }
-
-  .landing-page {
-    font-size: 1.3rem;
-  }
-
-  h1 {
-    font-size: 2rem;
+    margin: 40px;
   }
 }
