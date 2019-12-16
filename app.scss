@@ -49,8 +49,7 @@ body {
       margin-block-start: 0;
     }
 
-    a {
-      display: inline-block;
+    .landing-section-link {
       margin-block-end: 8px;
     }
   }
@@ -60,5 +59,12 @@ body {
 @media (max-width: 880px) {
   .landing-page {
     margin: 40px;
+  }
+}
+
+// Smaller font for mobile screens
+@media (max-width: 600px) {
+  .landing-section {
+    font-size: 1rem;
   }
 }

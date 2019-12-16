@@ -25,3 +25,10 @@
     }
   }
 }
+
+// Smaller font for mobile screens
+@media (max-width: 600px) {
+  .article-page {
+    font-size: 1rem;
+  }
+}
