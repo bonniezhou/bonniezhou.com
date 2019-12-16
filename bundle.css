@@ -60,6 +60,10 @@
       background: var(--tape-black) !important;
       color: var(--tape-white) !important; }
 
+@media (max-width: 600px) {
+  .article-page {
+    font-size: 1rem; } }
+
 body {
   font-family: monospace; }
   body a {
@@ -99,11 +103,14 @@ body {
   .landing-section .landing-section-body p {
     -webkit-margin-before: 0;
             margin-block-start: 0; }
-  .landing-section .landing-section-body a {
-    display: inline-block;
+  .landing-section .landing-section-body .landing-section-link {
     -webkit-margin-after: 8px;
             margin-block-end: 8px; }
 
 @media (max-width: 880px) {
   .landing-page {
     margin: 40px; } }
+
+@media (max-width: 600px) {
+  .landing-section {
+    font-size: 1rem; } }
